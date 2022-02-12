@@ -41,10 +41,11 @@ const LoginFunction = async (data) => {
         },
         body: JSON.stringify(data)
     }).then(response => response.json());
+
     if (response['data'] != "") {
             window.location.href = "http://localhost:63342/adminJS/users/user.html";
-            localStorage.setItem('token', response['data'][0]['email']);
-           return  response['data'];
+            localStorage.setItem('token', response['data']['email']);
+           return  response['data']['email'];
     } else
         return document.querySelector('#login_form').innerHTML += "<span>" + "Invalid Login or Password" + "</span>";
 };
@@ -55,5 +56,4 @@ document.querySelector('.enter').addEventListener('click', () => {
         'password': formData[1]['pass'].value,
     };
     LoginFunction(loginData);
-    console.log(LoginFunction(loginData));
 });

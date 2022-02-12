@@ -27,3 +27,10 @@ a {
 #header #left {
     margin: 70px 5px;
 }
+#header #left #delete {
+    width: 130px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: red;
+    border: none;
+}
