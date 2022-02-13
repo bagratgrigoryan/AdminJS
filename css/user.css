@@ -25,12 +25,41 @@ a {
     margin: 7px 10px;
 }
 #header #left {
-    margin: 70px 5px;
+    margin: 65px 5px;
 }
 #header #left #delete {
     width: 130px;
-    height: 25px;
+    height: 30px;
     border-radius: 5px;
     background-color: red;
     border: none;
+}
+#header #left #delete {
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: red;
+    border: none;
+}
+#header #left #logout {
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: darkcyan;
+    border: none;
+}
+#container {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+#side {
+    width: 20%;
+    height: 400px;
+    background-color: lightgrey;
+}
+#content {
+    width: 79%;
+    height: 400px;
+    background-color: lightgrey;
 }

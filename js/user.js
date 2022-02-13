@@ -36,6 +36,9 @@ document.querySelector('#delete').addEventListener('click', () => {
     getData(token);
 });
 
+document.querySelector('#logout').addEventListener('click',()=>{
+    window.location.href = "http://localhost:63342/adminJS/index.html";
+    localStorage.removeItem('token')
+});
 userData(token);
-
 
