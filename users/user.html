@@ -10,13 +10,25 @@
 <body>
 <header id="header">
     <div id="right">
-        <div id="image"></div>
-        <a href="/AdminJs/users/user.html" id="fullName"></a>
+        <div id="image">
+            <div id="profileAvatar"></div>
+            <div id="upload">
+                <form id="avatar">
+                    <input type="file" id="inpFile" name="file" accept="image/*">
+                    <label for="inpFile">Choose Photo</label>
+                </form>
+            </div>
+        </div>
+            <div id="profileName">
+                <a href="/AdminJs/users/user.html" id="fullName"></a>
+            </div>
+
+
     </div>
-   <div id="left">
-       <button id="delete" type="button">Delete</button>
-       <button id="logout" type="button">Log Out</button>
-   </div>
+    <div id="left">
+        <button id="delete" type="button">Delete</button>
+        <button id="logout" type="button">Log Out</button>
+    </div>
 </header>
 <div id="container">
     <div id="side"></div>
