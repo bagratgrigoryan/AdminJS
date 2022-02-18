@@ -11,7 +11,7 @@ const FormFunction = async (data) => {
         },
         body: JSON.stringify(data)
     }).then(response => response.json());
-    window.location.href = "http://localhost:63342/adminJS/index.html";
+    window.location.href = "http://localhost:63343/adminJS/index.html";
     return response
 };
 document.querySelector('.register').addEventListener('click', () => {
@@ -41,14 +41,14 @@ const LoginFunction = async (data) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(response => response.json());
-
-    if (response['data']['remember_token']) {
-            window.location.href = "http://localhost:63342/adminJS/users/user.html";
-            localStorage.setItem('token', response['data']['remember_token']);
-           return  response['data']['remember_token'];
-    } else
-        return document.querySelector('#login_form').innerHTML += "<span>" + "Invalid Login or Password" + "</span>";
+    })
+    let result = await response.json();
+    console.log(result);
+    if (result['status'] == "success") {
+        window.location.href = "http://localhost:63343/adminJS/users/user.html";
+        localStorage.setItem('token', result['user']['remember_token']);
+        return  result['user']['remember_token'];
+    } else return document.querySelector('#login_form').innerHTML += "<span>" + result['message'] + "</span>"
 };
 document.querySelector('.enter').addEventListener('click', () => {
 
@@ -56,5 +56,6 @@ document.querySelector('.enter').addEventListener('click', () => {
         'login': formData[1]['login'].value,
         'password': formData[1]['pass'].value,
     };
+    console.log(loginData);
     LoginFunction(loginData);
 });
